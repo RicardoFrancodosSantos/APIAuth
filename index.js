@@ -53,6 +53,10 @@ app.get("/apiKey", async (req, res) => {
   }
 });
 
+const config = {
+  headers: { Authorization: `Bearer ${yourBearerToken}` },
+};
+
 app.get("/bearerToken", (req, res) => {
   //TODO 5: Write your code here to hit up the /secrets/{id} endpoint
   //and get the secret with id of 42
