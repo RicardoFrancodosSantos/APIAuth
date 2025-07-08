@@ -18,8 +18,10 @@ app.get("/", (req, res) => {
 app.get("/noAuth", async (req, res) => {
   try {
     const result = await axios.get(API_URL + "/random");
-    res.render("index.ejs", { content: JSON.stringify(result.data) });
-  } 
+    res.render("index.ejs", { content: JSON.stringify(result.data)});
+  }  catch (error) {
+    res.status(404).send(error.message);
+  }
 });
 
 
